@@ -14,8 +14,8 @@
    <div class="row">
         <div class="col-12 text-center">
          @if (count($generos) >= 1)
-          <table class="table table-bordered" id="laravel_crud">
-           <thead>
+          <table class="table table-bordered table-hover table-striped" id="laravel_crud">
+           <thead class="thead-dark">
               <tr>
                  <th>Id</th>
                  <th>Nombre</th>

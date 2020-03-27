@@ -16,7 +16,7 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        $generos = Genero::orderBy('id','desc')->paginate(2);
+        $generos = Genero::orderBy('id','desc')->paginate(5);
         return view('genero.list', compact('generos'));
     }
 

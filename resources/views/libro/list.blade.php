@@ -5,14 +5,16 @@
 @endsection
 
 @section('contenido')
-  
+@if(session('success'))
+    <script>alert('{{session('success')}}'); </script>
+@endif
   <a href="{{ route('libro.create') }}" class="btn btn-success mb-2">Agregar</a> 
   <br>
    <div class="row">
         <div class="col-12 text-center">
          @if (count($libros) >= 1)
-          <table class="table table-bordered" id="laravel_crud">
-           <thead class="align-self-center">
+          <table class="table table-responsive-lg table-bordered table-hover table-striped" id="laravel_crud">
+           <thead class="thead-dark">
               <tr>
                  <th>Id</th>
                  <th>Título</th>
