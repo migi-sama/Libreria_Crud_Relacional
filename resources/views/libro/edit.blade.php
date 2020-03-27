@@ -36,7 +36,7 @@
     <div class="col-md-4">
         <div class="form-group">
             <strong>Fecha</strong>
-            <input type="date" name="fecha" class="form-control" value="{{$libro_info->fecha}}">
+            <input type="date" name="fecha" class="form-control" value="{{ $libro_info->fecha->format('Y-m-d') }}">
             <span class="text-danger">{{ $errors->first('fecha') }}</span>
         </div>
     </div>

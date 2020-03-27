@@ -120,6 +120,7 @@ class LibroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Libro::where('id',$id)->delete();
+        return Redirect::to('libro')->with('success','Libro eliminado satisfactoriamente');
     }
 }

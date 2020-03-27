@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenido')
+  
   <a href="{{ route('libro.create') }}" class="btn btn-success mb-2">Agregar</a> 
   <br>
    <div class="row">
@@ -24,7 +25,6 @@
            </thead>
            <tbody>
             @foreach($libros ?? '' as $libro)
-            
             <tr>
                 <td>{{ $libro->id }}</td>
                 <td>{{ $libro->titulo }}</td>
@@ -38,7 +38,7 @@
                     <i class="fa fa-edit"></i>
                 Editar</a></td>
                 <td>
-                    <form action="#" method="post">
+                    <form action="{{ route('libro.destroy', $libro->id) }}" method="post">
                         {{ csrf_field() }}
                         @method('DELETE')
                         <button class="btn btn-danger fa fa-trash-alt" type="submit" 

@@ -106,8 +106,26 @@ class GeneroController extends Controller
      */
     public function destroy($id)
     {
-        Genero::where('id',$id)->delete();
-        return Redirect::to('genero')->with('success','Género eliminado satisfactoriamente');
+        /*$status = Genero::where('id',$id)->delete();
+
+        if($status==true){
+            return Redirect::to('genero')->echo("<script>alert('El género fue eliminado correctamente.');</script>");
+        }
+
+        else if ($status == false) {
+            return Redirect::to('genero')->echo("<script>alert('Error al aliminar. Género en uso.');</script>");
+        }
+        */
+       
+        try {
+            //Eliminar registro
+            Genero::where('id',$id)->delete();
+            return Redirect::to('genero')->with('success','Género eliminado satisfactoriamente');
+        } 
+        catch (\Exception $e) {
+            return Redirect::to('genero')->withSuccess('No puede ser eliminado, está siendo usado.');
+        }
+        
 
     }
 }

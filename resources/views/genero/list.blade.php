@@ -5,6 +5,10 @@
 @endsection
 
 @section('contenido')
+
+@if(session('success'))
+    <script>alert('{{session('success')}}'); </script>
+@endif
   <a href="{{ route('genero.create') }}" class="btn btn-success mb-2">Agregar</a> 
   <br>
    <div class="row">
